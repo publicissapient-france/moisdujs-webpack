@@ -1,0 +1,19 @@
+{
+  "name": "moisdujs-base",
+  "version": "1.0.0",
+  "description": "Application de base pour le mois du JS",
+  "scripts": {
+    "serve": "./node_modules/.bin/http-server -a localhost -p 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xebia-france/moisdujs-base.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.2"
+  },
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  }
+}
