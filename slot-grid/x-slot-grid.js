@@ -25,12 +25,12 @@
             let rows = '';
             for (let i = 0; i < nbRows; i++) {
                 rows +=
-                    `<tr>
-            <td>${slots[1][i] || ''}</td>
-            <td>${slots[2][i] || ''}</td>
-            <td>${slots[3][i] || ''}</td>
-            <td>${slots[4][i] || ''}</td>
-          </tr>`;
+                `<tr>
+                    <td>${slots[1][i] || ''}</td>
+                    <td>${slots[2][i] || ''}</td>
+                    <td>${slots[3][i] || ''}</td>
+                    <td>${slots[4][i] || ''}</td>
+                </tr>`;
             }
 
             this.querySelector('#rows').innerHTML = rows;
