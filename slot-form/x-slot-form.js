@@ -36,7 +36,7 @@
         }
 
         reset() {
-            this.slotColumn.value = '';
+            this.slotColumn.value = 1;
             this.slotName.value = '';
         }
     }
