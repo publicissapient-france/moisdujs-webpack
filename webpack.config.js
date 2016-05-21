@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   context: __dirname, // la racine de l'app (fs)
@@ -11,6 +12,7 @@ module.exports = {
     publicPath: '/dist/' // le path de l'output relatif au host
   },
   plugins: [
+    new ExtractTextPlugin('styles/app.css'), // le path et le nom du fichier extrait
     new webpack.ProvidePlugin(
       {
       $: "jquery", // la variable $ référence globalement jQuery
@@ -25,7 +27,7 @@ module.exports = {
       },
       {
         test: /\.css/, // si je rencontre un import de fichier css...
-        loader: 'style!css' //... alors j'utilise les loaders style et css
+        loader: ExtractTextPlugin.extract('style', 'css') //... alors j'utilise les loaders style et css
       },
       {
         test: /\.js$/, // si je rencontre un import de fichier js...
