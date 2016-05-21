@@ -1,5 +1,5 @@
-import './x-slot-grid.css'
-import template from './x-slot-grid.html'
+import './x-slot-grid.css';
+import template from './x-slot-grid.html';
 
 
 class XSlotGrid extends HTMLElement {
