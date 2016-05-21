@@ -1,7 +1,4 @@
 // on importe directement les deux composants
-import 'bootstrap'
-import 'bootstrap/dist/css/bootstrap.css'
-
 import './slot-grid/x-slot-grid'
 import './slot-form/x-slot-form'
 

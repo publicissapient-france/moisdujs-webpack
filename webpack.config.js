@@ -10,13 +10,6 @@ module.exports = {
     filename: 'app.js', // le nom de l'output
     publicPath: '/dist/' // le path de l'output relatif au host
   },
-  plugins: [
-    new webpack.ProvidePlugin(
-      {
-      $: "jquery",
-      jQuery: "jquery"
-    })
-  ],
   module: {
     loaders: [
       {
@@ -31,14 +24,6 @@ module.exports = {
         test: /\.js$/, // si je rencontre un import de fichier js...
         exclude: [/node_modules/], //... qui n'est pas dans /node_modules/...
         loader: 'babel' //... alors j'utilise le loader babel
-      },
-      {
-        test: /\.(svg|woff|woff2)$/, // pour charger les fonts et icones de bootstrap
-        loader: 'url-loader?limit=10000&name=[name].[ext]'
-      },
-      {
-        test: /\.(eot|ttf)$/, // pour charger les fonts et icones de bootstrap
-        loader: 'file-loader?name=[name].[ext]'
       }
       // pour tout le reste, webpack utilise le js loader (built-in)
     ]
