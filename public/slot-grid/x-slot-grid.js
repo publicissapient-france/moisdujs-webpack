@@ -1,6 +1,5 @@
-import './x-slot-grid.css'
-import template from './x-slot-grid.html'
-
+import './x-slot-grid.css';
+import template from './x-slot-grid.html';
 
 class XSlotGrid extends HTMLElement {
 
@@ -25,11 +24,11 @@ class XSlotGrid extends HTMLElement {
     for (let i = 0; i < nbRows; i++) {
       rows +=
         `<tr>
-                   <td>${slots[1][i] || ''}</td>
-                   <td>${slots[2][i] || ''}</td>
-                   <td>${slots[3][i] || ''}</td>
-                   <td>${slots[4][i] || ''}</td>
-               </tr>`;
+             <td>${slots[1][i] || ''}</td>
+             <td>${slots[2][i] || ''}</td>
+             <td>${slots[3][i] || ''}</td>
+             <td>${slots[4][i] || ''}</td>
+         </tr>`;
     }
 
     this.querySelector('#rows').innerHTML = rows;
