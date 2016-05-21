@@ -20,7 +20,7 @@ module.exports = {
     })
   ],
   eslint: {
-    configFile: '.eslintrc'
+    configFile: '.eslintrc' // fichier de références des règles eslint
   },
   module: {
     preLoaders: [
