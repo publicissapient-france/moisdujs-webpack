@@ -21,6 +21,10 @@ Add extract-text-webpack-plugin to bundle css in a separate file.
 
 Add eslint and eslint-loader, add preloader config to lint files before each webpack build. 
 
+#### step/5
+
+Add compression plugin to gzip js and css bundles. 
+
 ### Licence
 
 ISC
