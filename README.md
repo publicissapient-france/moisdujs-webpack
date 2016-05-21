@@ -13,6 +13,10 @@ Include Bootstrap and jQuery dependencies.
 Configure global jQuery module with Webpack ProvidePlugin.  
 Add filer-loader and url-loader to bundle Bootstrap glyphicons dependency. 
 
+#### step/3
+
+Add extract-text-webpack-plugin to bundle css in a separate file. 
+
 ### Licence
 
 ISC
