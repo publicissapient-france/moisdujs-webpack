@@ -13,8 +13,8 @@ module.exports = {
   plugins: [
     new webpack.ProvidePlugin(
       {
-      $: "jquery",
-      jQuery: "jquery"
+      $: "jquery", // la variable $ référence globalement jQuery
+      jQuery: "jquery" // ...ainsi que la variable jQuery
     })
   ],
   module: {
@@ -33,12 +33,12 @@ module.exports = {
         loader: 'babel' //... alors j'utilise le loader babel
       },
       {
-        test: /\.(svg|woff|woff2)$/, // pour charger les fonts et icones de bootstrap
-        loader: 'url-loader?limit=10000&name=[name].[ext]'
+        test: /\.(svg|woff|woff2)$/, // si je rencontre des fichiers svg ou woff ou woff2 < à 10kb, sinon je passe à file-loader...
+        loader: 'url-loader?limit=10000&name=assets/[name].[ext]' //... alors j'utilise l'url-loader et je copie les fichiers
       },
       {
-        test: /\.(eot|ttf)$/, // pour charger les fonts et icones de bootstrap
-        loader: 'file-loader?name=[name].[ext]'
+        test: /\.(eot|ttf)$/, // si je rencontre des fichiers eot ou ttf...
+        loader: 'file-loader?name=assets/[name].[ext]' //.. alors j'utilise le file-loader et je copie les fichiers
       }
       // pour tout le reste, webpack utilise le js loader (built-in)
     ]
