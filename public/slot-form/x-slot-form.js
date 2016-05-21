@@ -1,5 +1,5 @@
-import './x-slot-form.css'
-import template from './x-slot-form.html'
+import './x-slot-form.css';
+import template from './x-slot-form.html';
 
 class XSlotForm extends HTMLElement {
 
