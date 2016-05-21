@@ -20,6 +20,13 @@ module.exports = {
     })
   ],
   module: {
+    preLoaders: [
+      {
+        test: /\.js$/, // si je rencontre des fichiers js...
+        exclude: /node_modules/, // qui ne sont pas dans /node_modules...
+        loader: "eslint" //... alors j'utilise eslint-loader
+      }
+    ],
     loaders: [
       {
         test: /\.html$/, // si je rencontre un import de fichier html...
