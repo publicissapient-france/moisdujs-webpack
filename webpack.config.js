@@ -19,6 +19,9 @@ module.exports = {
       jQuery: "jquery" // ...ainsi que la variable jQuery
     })
   ],
+  eslint: {
+    configFile: '.eslintrc'
+  },
   module: {
     preLoaders: [
       {
