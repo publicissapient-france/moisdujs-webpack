@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   context: __dirname, // la racine de l'app (fs)
@@ -12,6 +13,7 @@ module.exports = {
     publicPath: '/dist/' // le path de l'output relatif au host
   },
   plugins: [
+    new CompressionPlugin(),
     new ExtractTextPlugin('styles/app.css'), // le path et le nom du fichier extrait
     new webpack.ProvidePlugin(
       {
