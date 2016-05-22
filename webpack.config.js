@@ -40,8 +40,8 @@ module.exports = {
         loader: 'html' //... alors j'utilise le loader html
       },
       {
-        test: /\.css/, // si je rencontre un import de fichier css...
-        loader: ExtractTextPlugin.extract('style', 'css') //... alors j'utilise les loaders style et css
+        test: /\.less|css$/, // si je rencontre un import de fichier less ou css...
+        loader: ExtractTextPlugin.extract('css?sourceMap!less?sourceMap') //... alors j'utilise les loaders less et css
       },
       {
         test: /\.js$/, // si je rencontre un import de fichier js...
