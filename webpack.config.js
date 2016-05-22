@@ -6,7 +6,8 @@ var AssetsPlugin = require('assets-webpack-plugin');
 module.exports = {
   context: __dirname, // la racine de l'app (fs)
   entry: {
-    app: [ './public/app.js' ] // les points d'entrée de l'app
+    app: [ './public/app.js' ], // les points d'entrée de l'app
+    vendors: [ 'bootstrap' ] // <= va faire un require('bootstrap')
   },
   output: {
     path: __dirname + '/dist', // le path absolu de l'output (fs)
@@ -14,6 +15,7 @@ module.exports = {
     publicPath: '/dist/' // le path de l'output relatif au host
   },
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors-[hash].js'), // le nom de l'entry et le nom de sortie
     new AssetsPlugin(),
     new CompressionPlugin(),
     new ExtractTextPlugin('styles/app-[hash].css'), // le path et le nom du fichier extrait plus un hash
