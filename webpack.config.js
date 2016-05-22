@@ -7,7 +7,7 @@ module.exports = {
   context: __dirname, // la racine de l'app (fs)
   entry: {
     app: [ './public/app.js' ], // les points d'entrée de l'app
-    vendors: [ 'bootstrap' ] // <= va faire un require('bootstrap')
+    vendors: [ './public/vendors.js' ] // <= on associe notre module a l'entry vendors
   },
   output: {
     path: __dirname + '/dist', // le path absolu de l'output (fs)

@@ -1,4 +1,3 @@
-import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
 // on importe directement les deux composants
