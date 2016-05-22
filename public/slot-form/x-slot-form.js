@@ -17,13 +17,12 @@ class XSlotForm extends HTMLElement {
 
   onClickAddSlot(e) {
     e.preventDefault();
-    const event = new CustomEvent('add-slot', {
-      detail: {
-        slot: this.slotColumn.value,
-        name: this.slotName.value
-      }
+    let event;
+    require.ensure([], () => { // eslint-disable-line no-undef
+      const eventsService = require('../services/events.service.js').default; // eslint-disable-line no-undef
+      event = eventsService.handleAddSlotEvent(this.slotColumn.value, this.slotName.value);
     });
-    if (event.detail.name && event.detail.slot) {
+    if (event && event.detail && event.detail.name && event.detail.slot) {
       this.dispatchEvent(event);
       this.reset();
     }
