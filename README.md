@@ -44,6 +44,10 @@ Add vendors import into index.mustache to generate script import as for the app.
 
 Like step/8 but this time vendors entry reference a module that import all vendors (here bootstrap).
 
+#### step/9
+
+Move custom event to a event service, use require.ensure to lazy load it in code.
+
 ### Licence
 
 ISC
