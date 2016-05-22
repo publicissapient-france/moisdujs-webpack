@@ -48,6 +48,11 @@ Like step/8 but this time vendors entry reference a module that import all vendo
 
 Move custom event to a event service, use require.ensure to lazy load it in code.
 
+#### step/10
+
+Add webpack dev server and configure npm scripts to build and start it.
+*WARNING* you can't use hashed bundles with webpack dev server, name changed brake reloading.
+
 ### Licence
 
 ISC
