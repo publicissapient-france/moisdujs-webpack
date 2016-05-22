@@ -11,7 +11,7 @@ const init = () => {
 
   document
     .querySelector('x-slot-form')
-    .addEventListener('add-slot', function (event) {
+    .addEventListener('add-slot', event => {
       slots[event.detail.slot].push(event.detail.name);
       grid.setAttribute('data', JSON.stringify(slots));
     }, true);
