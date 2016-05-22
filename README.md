@@ -40,6 +40,10 @@ Add less loader and webpack configuration.
 Use Webpack CommonsChunkPlugin to bundle vendors in a separate file.
 Add vendors import into index.mustache to generate script import as for the app.
 
+#### step/8bis
+
+Like step/8 but this time vendors entry reference a module that import all vendors (here bootstrap).
+
 ### Licence
 
 ISC
