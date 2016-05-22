@@ -29,7 +29,11 @@ Add compression plugin to gzip js and css bundles.
 
 Add assets plugin and webpack configuration.
 Replace index.html by index.mustache.
-Add npm build script to generate index.html from template
+Add npm build script to generate index.html from template.
+
+#### step/7
+
+Add less loader and webpack configuration.
 
 ### Licence
 
