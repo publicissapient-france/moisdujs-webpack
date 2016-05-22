@@ -5,7 +5,7 @@
   "scripts": {
     "build": "webpack -d && mustache webpack-assets.json index.mustache > index.html",
     "serve": "http-server ./ -a localhost -p 3000",
-    "start": "npm run build && npm run serve && webpack -d -w"
+    "start": "npm run build && npm run serve"
   },
   "repository": {
     "type": "git",
