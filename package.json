@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Application de base pour le mois du JS",
   "scripts": {
-    "build": "webpack && mustache webpack-assets.json index.mustache > index.html",
+    "build": "webpack -d && mustache webpack-assets.json index.mustache > index.html",
     "serve": "http-server ./ -a localhost -p 3000",
     "start": "npm run build && npm run serve && webpack -d -w"
   },
