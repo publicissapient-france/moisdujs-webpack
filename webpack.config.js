@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CompressionPlugin = require('compression-webpack-plugin');
+var AssetsPlugin = require('assets-webpack-plugin');
 
 module.exports = {
   context: __dirname, // la racine de l'app (fs)
@@ -9,12 +10,13 @@ module.exports = {
   },
   output: {
     path: __dirname + '/dist', // le path absolu de l'output (fs)
-    filename: 'app.js', // le nom de l'output
+    filename: 'app-[hash].js', // le nom de l'output plus un hash
     publicPath: '/dist/' // le path de l'output relatif au host
   },
   plugins: [
+    new AssetsPlugin(),
     new CompressionPlugin(),
-    new ExtractTextPlugin('styles/app.css'), // le path et le nom du fichier extrait
+    new ExtractTextPlugin('styles/app-[hash].css'), // le path et le nom du fichier extrait plus un hash
     new webpack.ProvidePlugin(
       {
       $: "jquery", // la variable $ référence globalement jQuery
