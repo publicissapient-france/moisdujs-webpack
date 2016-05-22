@@ -1,4 +1,4 @@
-import './x-slot-grid.css';
+import './x-slot-grid.less';
 import template from './x-slot-grid.html';
 
 
