@@ -25,6 +25,12 @@ Add eslint and eslint-loader, add preloader config to lint files before each web
 
 Add compression plugin to gzip js and css bundles. 
 
+#### step/6
+
+Add assets plugin and webpack configuration.
+Replace index.html by index.mustache.
+Add npm build script to generate index.html from template
+
 ### Licence
 
 ISC
