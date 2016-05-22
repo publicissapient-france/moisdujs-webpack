@@ -35,6 +35,11 @@ Add npm build script to generate index.html from template.
 
 Add less loader and webpack configuration.
 
+#### step/8
+
+Use Webpack CommonsChunkPlugin to bundle vendors in a separate file.
+Add vendors import into index.mustache to generate script import as for the app.
+
 ### Licence
 
 ISC
