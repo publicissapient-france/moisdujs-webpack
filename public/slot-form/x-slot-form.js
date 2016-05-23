@@ -22,10 +22,12 @@ class XSlotForm extends HTMLElement {
   onClickAddSlot(e) {
     e.preventDefault();
     let event;
-    // l'utilisation de require.ensure n'est plus possible
-    // car nous n'utilisons plus le plugin babale transform-es2015-modules-commonjs
-    // (qui empêche le tree shaking)
-    // see http://www.2ality.com/2015/12/webpack-tree-shaking.html 
+    // l'utilisation de require.ensure ne fonctionne pas tel quel
+    // necessiterai plus de temps pour trouver comment le faire fonctionner
+    // require.ensure([], () => { // eslint-disable-line no-undef
+    //   const eventsService = require('../services/events.service.js'); // eslint-disable-line no-undef
+    //   event = eventsService.handleAddSlotEvent(this.slotColumn.value, this.slotName.value);
+    // });
     event = eventsService.handleAddSlotEvent(this.slotColumn.value, this.slotName.value);
     if (event && event.detail && event.detail.name && event.detail.slot) {
       this.dispatchEvent(event);
