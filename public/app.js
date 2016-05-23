@@ -5,16 +5,26 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './slot-grid/x-slot-grid';
 import './slot-form/x-slot-form';
 
+// on import les méthodes du services
+import { addSlot, resetEvent } from './services/slot.service';
+
 const init = () => {
-  const slots = { 1: [], 2: [], 3: [], 4: [] };
   const grid = document.querySelector('x-slot-grid');
 
   document
     .querySelector('x-slot-form')
-    .addEventListener('add-slot', event => {
-      slots[event.detail.slot].push(event.detail.name);
-      grid.setAttribute('data', JSON.stringify(slots));
+    .addEventListener('add-slot', event  => {
+      const newSlots = addSlot(event);
+      grid.setAttribute('data', JSON.stringify(newSlots));
     }, true);
+
+  document
+    .querySelector('x-slot-form')
+    .addEventListener('reset-event', event => {
+      const newSlots = resetEvent(event); // eslint-disable-line no-undef
+      grid.setAttribute('data', JSON.stringify(newSlots));
+    }, true);
+
 };
 
 init();
