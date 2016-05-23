@@ -3,6 +3,23 @@
 This  repository shows examples of Webpack use, based on [moisdujs-base]() basic javascript vanilla application.  
 **_WARNING_ this works only on Chrome**
 
+## Prerequisites
+
+nodeJS & npm (see package.json *engines* for version)
+
+## Setup
+
+All steps are branches.
+To test a step :
+
+    $ git co <branch>
+    $ npm i
+    $ npm run <script> (see package.json for details)
+    
+If you want to clearly see what webpack do, remove dist/ folder before packaging.
+
+----
+    
 #### step/1
 
 Refactor code to use webpack packaging (no Boostrap yet).  
@@ -63,7 +80,9 @@ To test, remove resetEvent in app.js import and build prod version.
 
 #### That's all for now!
 
-Missing something? Ping me @modulom
+Missing something? Fill an issue ;)
+
+----
 
 ### Licence
 
