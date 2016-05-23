@@ -53,6 +53,18 @@ Move custom event to a event service, use require.ensure to lazy load it in code
 Add webpack dev server and configure npm scripts to build and start it.
 *WARNING* you can't use hashed bundles with webpack dev server, name changed brake reloading.
 
+#### step/11
+
+Upgrade webpack version to version 2.
+Change babel plugins, remove transform-es2015-modules-commonjs to enable tree shaking (we need to use native ES6 modules).
+For the same reason, we can't use lazy loading with require.ensure, because it's commonJS pattern.
+Add some logic in events service to demonstrate tree shaking.
+To test, remove resetEvent in app.js import and build prod version.
+
+#### That's all for now!
+
+Missing something? Ping me @modulom
+
 ### Licence
 
 ISC
