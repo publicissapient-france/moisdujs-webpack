@@ -63,7 +63,7 @@ To test, remove resetEvent in app.js import and build prod version.
 
 #### That's all for now!
 
-Missing something? Ping me @modulom
+Missing something? Fill an issue ;)
 
 ### Licence
 
