@@ -24,7 +24,8 @@ class XSlotForm extends HTMLElement {
     let event;
     // l'utilisation de require.ensure n'est plus possible
     // car nous n'utilisons plus le plugin babale transform-es2015-modules-commonjs
-    // (qui emêche le tree shaking)
+    // (qui empêche le tree shaking)
+    // see http://www.2ality.com/2015/12/webpack-tree-shaking.html 
     event = eventsService.handleAddSlotEvent(this.slotColumn.value, this.slotName.value);
     if (event && event.detail && event.detail.name && event.detail.slot) {
       this.dispatchEvent(event);
