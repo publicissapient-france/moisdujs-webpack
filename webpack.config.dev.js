@@ -11,19 +11,18 @@ module.exports = {
   },
   output: {
     path: __dirname + '/dist', // le path absolu de l'output (fs)
-    filename: 'app.js', // le nom de l'output
+    filename: '[name].js', // le nom de l'output
     publicPath: '/dist/' // le path de l'output relatif au host
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'), // le nom de l'entry et le nom de sortie
+    new webpack.optimize.CommonsChunkPlugin({ name:'vendors', fileName: 'vendors-[hash].js' }), // le nom de l'entry et le nom de sortie
     new AssetsPlugin(),
     new CompressionPlugin(),
     new ExtractTextPlugin('styles/app.css'), // le path et le nom du fichier extrait
-    new webpack.ProvidePlugin(
-      {
-        $: "jquery", // la variable $ référence globalement jQuery
-        jQuery: "jquery" // ...ainsi que la variable jQuery
-      })
+    new webpack.ProvidePlugin({
+      $: "jquery", // la variable $ référence globalement jQuery
+      jQuery: "jquery" // ...ainsi que la variable jQuery
+    })
   ],
   eslint: {
     configFile: '.eslintrc' // fichier de références des règles eslint

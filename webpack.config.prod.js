@@ -11,16 +11,15 @@ module.exports = {
   },
   output: {
     path: __dirname + '/dist', // le path absolu de l'output (fs)
-    filename: 'app-[hash].js', // le nom de l'output plus un hash
+    filename: '[name]-[hash].js', // le nom de l'output plus un hash
     publicPath: '/dist/' // le path de l'output relatif au host
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors-[hash].js'), // le nom de l'entry et le nom de sortie
+    new webpack.optimize.CommonsChunkPlugin({ name:'vendors', fileName: 'vendors-[hash].js' }), // le nom de l'entry et le nom de sortie
     new AssetsPlugin(),
     new CompressionPlugin(),
     new ExtractTextPlugin('styles/app-[hash].css'), // le path et le nom du fichier extrait plus un hash
-    new webpack.ProvidePlugin(
-      {
+    new webpack.ProvidePlugin({
       $: "jquery", // la variable $ référence globalement jQuery
       jQuery: "jquery" // ...ainsi que la variable jQuery
     })
