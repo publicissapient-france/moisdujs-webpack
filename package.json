@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Application de base pour le mois du JS",
   "scripts": {
+    "clean": "test -d ./dist/ && rm -rf ./dist || echo \"no dist/ folder, continue\"",
     "serve": "http-server ./ -a localhost -p 3000",
-    "start": "webpack -d && npm run serve"
+    "start": "npm run clean && webpack -d && npm run serve"
   },
   "repository": {
     "type": "git",
