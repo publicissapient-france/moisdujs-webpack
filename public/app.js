@@ -8,6 +8,9 @@ import './slot-form/x-slot-form';
 // on import les méthodes du services
 import { addSlot, resetEvent } from './services/slot.service';
 
+// si on importe une seule méthode, l'autre ne sera pas exportée
+// import { addSlot, resetEvent } from './services/slot.service';
+
 const init = () => {
   const grid = document.querySelector('x-slot-grid');
 
