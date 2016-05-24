@@ -16,8 +16,6 @@ To test a step :
     $ npm i
     $ npm run <script> (see package.json for details)
     
-If you want to clearly see what webpack do, remove dist/ folder before packaging.
-
 ----
     
 #### step/1
