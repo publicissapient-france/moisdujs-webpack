@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Application de base pour le mois du JS",
   "scripts": {
+    "clean": "test -d ./dist/ && rm -rf ./dist || echo \"no dist/ folder, continue\"",
     "build": "mustache webpack-assets.json index.mustache > index.html",
-    "build:dev": "webpack -d --config webpack.config.dev.js && npm run build",
-    "build:prod": "webpack -p --config webpack.config.prod.js && npm run build",
+    "build:dev": "npm run clean && webpack -d --config webpack.config.dev.js && npm run build",
+    "build:prod": "npm run clean && webpack -p --config webpack.config.prod.js && npm run build",
     "serve": "http-server ./ -a localhost -p 3000",
     "start:dev": "npm run build:dev && npm run serve",
     "start:prod": "npm run build:prod && npm run serve",
